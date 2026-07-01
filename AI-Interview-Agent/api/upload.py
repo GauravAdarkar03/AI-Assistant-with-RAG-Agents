@@ -8,7 +8,7 @@ from services.rag_service import RAGService
 
 router = APIRouter()
 
-
+#When Streamlit calls
 @router.post("/upload")
 
 async def upload_resume(
@@ -21,7 +21,9 @@ async def upload_resume(
 
     with open(file_path, "wb") as f:
         f.write(await file.read())
-
+#Notice
+#It doesn't process PDF itself.
+#It calls
     result = RAGService.process_pdf(file_path)
 
     return result

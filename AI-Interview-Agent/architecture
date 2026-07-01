@@ -1,0 +1,33 @@
+                    USER
+                      │
+                      ▼
+             Streamlit (app.py)
+                      │
+          HTTP Request (requests)
+                      │
+                      ▼
+              FastAPI (main.py)
+                      │
+          Selects Correct API Route
+                      │
+          ┌───────────┴───────────┐
+          ▼                       ▼
+    api/chat.py             api/upload.py
+          │                       │
+          ▼                       ▼
+ Interview Service          RAG Service
+          │                       │
+          ▼                       ▼
+     LLM Service         Parser + Vector Store
+                                  │
+                 ┌────────────────┴──────────────┐
+                 ▼                               ▼
+           parser.py                     embeddings.py
+                 │                               │
+                 ▼                               ▼
+          Extract PDF                 Generate Embeddings
+                 │                               │
+                 └──────────────► FAISS ◄────────┘
+                                  │
+                                  ▼
+                           Vector Database
