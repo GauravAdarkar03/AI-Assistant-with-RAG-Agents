@@ -1,3 +1,29 @@
-# AI-Assistant-with-RAG-Agents
+# AI Interview Agent
 
-Upload your resume and any Job Description, then chat with an AI interviewer that asks interview questions, evaluates your answers, gives feedback, and remembers previous conversations.
+An end-to-end GenAI application that helps users prepare for technical interviews using Retrieval-Augmented Generation (RAG), AI Agents, and OpenAI.
+
+## Features
+
+- Resume Upload
+- Job Description Upload
+- AI Interviewer
+- Answer Evaluation
+- RAG-based Question Answering
+- Conversation Memory
+- FastAPI Backend
+- Streamlit Frontend
+
+## Tech Stack
+
+- Python
+- FastAPI
+- Streamlit
+- OpenAI
+- LangChain
+- FAISS
+- Pydantic
+
+
+###############
+Console 1 - (venv) gauravadarkar@Gauravs-MacBook-Air AI-Interview-Agent % uvicorn main:app --reload
+Console 2 - streamlit run app.py

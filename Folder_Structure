@@ -1,0 +1,94 @@
+AI-Interview-Agent/
+
+├── app.py
+├── api.py
+├── requirements.txt
+├── .env
+│
+├── data/
+│      resume.pdf
+│      jd.pdf
+│
+├── prompts/
+│      interviewer.txt
+│      evaluator.txt
+│
+├── utils/
+│      embeddings.py
+│      rag.py
+│      parser.py
+│      logger.py
+│      memory.py
+│
+├── api/
+│      chat.py
+│      upload.py
+│      health.py
+│
+├── models/
+│      schemas.py
+│
+├── vectorstore/
+│
+└── logs/
+
+######################################## Step by Step Flow of the Application ########################################
+User Upload Resume
+↓
+app.py
+↓
+POST /upload
+↓
+main.py
+↓
+upload.py
+↓
+RAGService.process_pdf()
+↓
+parser.py
+↓
+Extract Text
+↓
+rag.py
+↓
+Chunk Text
+↓
+embeddings.py
+↓
+OpenAI Embeddings
+↓
+FAISS
+↓
+Save Vector DB
+↓
+Return Success
+↓
+Streamlit Shows Success
+
+################################Request Flow (Ask Question)#########################################
+
+User
+↓
+Ask Question
+↓
+app.py
+↓
+GET /ask
+↓
+chat.py
+↓
+RAGService.ask()
+↓
+Retriever.search()
+↓
+FAISS
+↓
+Top 3 Chunks
+↓
+LLM Service
+↓
+GPT
+↓
+Answer
+↓
+Streamlit
