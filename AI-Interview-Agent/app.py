@@ -1,12 +1,30 @@
 import requests
 import streamlit as st
 
-st.title("🤖 AI Interview Agent")
+st.title(" AI Interview Agent")
 
-if st.button("Generate Interview Question"):
+uploaded = st.file_uploader(
+    "Upload Resume",
+    type="pdf"
+)
 
-    response = requests.get("http://127.0.0.1:8000/question")
+if uploaded:
+
+    files = {
+
+        "file":
+        (
+            uploaded.name,
+            uploaded.getvalue(),
+            "application/pdf"
+        )
+    }
+
+    response = requests.post(
+        "http://127.0.0.1:8000/upload",
+        files=files
+    )
 
     st.write("Status Code:", response.status_code)
-
-    st.json(response.json())
+    st.write("Response Text:")
+    st.code(response.text)

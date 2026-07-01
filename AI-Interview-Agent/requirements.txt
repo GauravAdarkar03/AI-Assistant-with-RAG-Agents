@@ -26,5 +26,18 @@ pandas
 
 numpy
 
+fastapi
+uvicorn
+streamlit
+openai
+langchain
+langchain-openai
+langchain-community
+faiss-cpu
+pypdf
+python-dotenv
+python-multipart
+tiktoken
 
-#pip install -r requirements.txt
+
+#pip install -r requirements.txt -> Installing the packages/libraries 
