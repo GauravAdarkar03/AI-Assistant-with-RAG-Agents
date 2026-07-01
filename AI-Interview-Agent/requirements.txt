@@ -25,3 +25,6 @@ requests
 pandas
 
 numpy
+
+
+#pip install -r requirements.txt
