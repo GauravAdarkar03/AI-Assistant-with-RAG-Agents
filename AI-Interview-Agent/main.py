@@ -27,4 +27,3 @@ def home():
 # http://127.0.0.1:8000/docs (Swagger UI)
 
 #This is the heart of your backend.
-
